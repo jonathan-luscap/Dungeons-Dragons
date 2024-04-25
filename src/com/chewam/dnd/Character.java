@@ -4,31 +4,49 @@ public class Character {
     /**
      *
      */
-    public enum CharacterType {
-        warrior(10,10),
+    public enum CharacterType
+    {
+        warrior(10, 10),
         wizard(6, 15);
 
         private final int attack;
         private final int life;
+        private OffensiveEquipment defaultEquipment;
 
-        CharacterType(int attack, int life) {
+        CharacterType(int attack, int life)
+        {
             this.attack = attack;
             this.life = life;
         }
-        //enum setters
-        public int getAttack() {
+
+        //enum getters
+        public int getAttack()
+        {
             return attack;
         }
-        public int getLife() {
+
+        public int getLife()
+        {
             return life;
         }
     }
-    public CharacterType type;
-    public String name;
-    public int attack;
-    public int life;
 
-    public Character(CharacterType type, String name) {
+    private CharacterType type;
+    private String name;
+    private int attack;
+    private int life;
+
+    public Character()
+    {
+    }
+
+    public Character(String name)
+    {
+        this.name = name;
+    }
+
+    public Character(CharacterType type, String name)
+    {
         this.name = name;
         this.type = type;
         this.attack = type.getAttack();
@@ -36,30 +54,57 @@ public class Character {
     }
 
     //Character getters and setters
-    public int getAttack() {
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public int getAttack()
+    {
         return attack;
     }
-    public void setAttack(int attack) {
+
+    public void setAttack(int attack)
+    {
         this.attack = attack;
     }
-    public int getLife() {
+
+    public int getLife()
+    {
         return life;
     }
-    public void setLife(int life) {
-        this.life = life;
+
+    public void setLife(int life)
+    {
+        if (life < 0) {
+            this.life = 0;
+        } else {
+            this.life = life;
+        }
     }
-    public CharacterType getType() {
+
+    public CharacterType getType()
+    {
         return type;
     }
-    public void setType(CharacterType type) {
+
+    public void setType(CharacterType type)
+    {
         this.type = type;
         this.attack = type.getAttack();
         this.life = type.getLife();
     }
+
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Character{" +
-                "type=" + type +
+                "equipmentType=" + type +
                 ", attack=" + attack +
                 ", life=" + life +
                 "}";
