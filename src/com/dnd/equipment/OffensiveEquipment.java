@@ -1,4 +1,6 @@
-package com.chewam.dnd;
+package com.dnd.equipment;
+
+import com.dnd.character.Character;
 
 public class OffensiveEquipment {
     public enum OffensiveEquipmentType

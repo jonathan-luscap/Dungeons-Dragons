@@ -1,4 +1,6 @@
-package com.chewam.dnd;
+package com.dnd.character;
+
+import com.dnd.equipment.OffensiveEquipment;
 
 public class Character {
     /**
@@ -35,6 +37,7 @@ public class Character {
     private String name;
     private int attack;
     private int life;
+    private int position = 1;
 
     public Character()
     {
@@ -100,13 +103,30 @@ public class Character {
         this.life = type.getLife();
     }
 
+    public int getPosition()
+    {
+        return position;
+    }
+
+    public void setPosition(int position)
+    {
+        this.position = position;
+    }
+
     @Override
     public String toString()
     {
-        return "Character{" +
-                "equipmentType=" + type +
-                ", attack=" + attack +
-                ", life=" + life +
-                "}";
+        String returnedType = null;
+        if (type == CharacterType.warrior)
+        {
+            returnedType = "guerrier";
+        }
+        else if (type == CharacterType.wizard)
+        {
+            returnedType = "sorcier";
+        }
+        return "\n\n" + name + " personnage de type " + returnedType + " : \n\t" +
+                "niveau d'attaque : " + attack + "\n\t" +
+                "nombre de vies : " + life + "\n\n";
     }
 }
