@@ -9,13 +9,16 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
-        ArrayList players = menu.startMenu();
-        if ( players == null)
-        {
-            return;
-        }
-        System.out.println("Ok, let's start the game !");
         Game game = new Game();
-        game.play(players);
+        boolean continu = true;
+        while (continu)
+        {
+            ArrayList<Character> players = menu.startMenu();
+            if ( players == null)
+            {
+                return;
+            }
+            continu = game.play(players, menu);
+        }
     }
 }
