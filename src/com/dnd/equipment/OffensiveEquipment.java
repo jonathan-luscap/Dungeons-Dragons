@@ -13,13 +13,13 @@ public class OffensiveEquipment {
     private int attack;
     private OffensiveEquipmentType equipmentType;
 
-    public OffensiveEquipment(Character.CharacterType characterType)
-    {
-        if (characterType == Character.CharacterType.warrior){
-            this.equipmentType = OffensiveEquipmentType.weapon;
-        } else if (characterType == Character.CharacterType.wizard) {
-            this.equipmentType = OffensiveEquipmentType.spell;
-        }
-    }
+//    public OffensiveEquipment(Character.CharacterType characterType)
+//    {
+//        if (characterType == Character.CharacterType.warrior){
+//            this.equipmentType = OffensiveEquipmentType.weapon;
+//        } else if (characterType == Character.CharacterType.wizard) {
+//            this.equipmentType = OffensiveEquipmentType.spell;
+//        }
+//    }
 
 }
