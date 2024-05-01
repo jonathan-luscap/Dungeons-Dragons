@@ -1,10 +1,10 @@
 package com.dnd.character;
 
-import com.dnd.equipment.OffensiveEquipment;
+import java.util.ArrayList;
 
-public abstract class Character {
+public abstract class Adventurer {
     private String name;
-    private int position = 1;
+    private int position = 0;
 
     //Character getters and setters
     public String getName()

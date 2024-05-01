@@ -1,7 +1,5 @@
 package com.dnd.equipment;
 
-import com.dnd.character.Character;
-
 public class DefensiveEquipment {
     public enum OffensiveEquipmentType {
         shield,

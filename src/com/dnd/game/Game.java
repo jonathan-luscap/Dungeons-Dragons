@@ -1,18 +1,13 @@
 package com.dnd.game;
 
-import com.dnd.character.Character;
-import com.dnd.menu.Menu;
-import com.dnd.menu.StartMenu;
+import com.dnd.character.Adventurer;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Game {
-    public void play()
+    public void play(ArrayList<Adventurer> players)
     {
-        StartMenu startMenu = new StartMenu();
-        startMenu.displayChoice();
-        int response = startMenu.getResponse();
+
 
     }
 }

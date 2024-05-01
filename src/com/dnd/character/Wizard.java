@@ -1,6 +1,6 @@
 package com.dnd.character;
 
-public class Wizard extends Character {
+public class Wizard extends Adventurer {
     private String type = "wizard";
     private int attack = 6;
     private int life = 15;
@@ -56,8 +56,8 @@ public class Wizard extends Character {
     @Override
     public String toString()
     {
-        return "\n" + this.getName() + " personnage de type " + type + " : \n\t" +
-                "niveau d'attaque : " + attack + "\n\t" +
+        return "\t\t" + this.getName() + " personnage de type " + type + " : \n\t\t\t" +
+                "niveau d'attaque : " + attack + "\n\t\t\t" +
                 "nombre de vies : " + life + "\n";
     }
 }
