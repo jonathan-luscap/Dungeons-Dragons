@@ -24,7 +24,7 @@ public abstract class Menu {
       }
       return validatedResponse;
    }
-   public String isValidStringResponse(String response) throws BadStringException {
+   protected String isValidStringResponse(String response) throws BadStringException {
       if (response.matches("^[A-Za-z0-9 '-]{3,20}$"))
       {
          return  response;

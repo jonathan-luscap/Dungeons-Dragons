@@ -1,23 +1,30 @@
 package com.dnd.equipment;
 
-public class OffensiveEquipment {
-    public enum OffensiveEquipmentType
-    {
-        weapon,
-        spell
+public abstract class OffensiveEquipment {
+
+    private int attack;
+    private String type;
+
+    public abstract void attack();
+
+    public OffensiveEquipment() {
+        this.attack = 0;
+        this.type = "";
     }
 
-    private String name;
-    private int attack;
-    private OffensiveEquipmentType equipmentType;
+    public int getAttack() {
+        return attack;
+    }
 
-//    public OffensiveEquipment(Character.CharacterType characterType)
-//    {
-//        if (characterType == Character.CharacterType.warrior){
-//            this.equipmentType = OffensiveEquipmentType.weapon;
-//        } else if (characterType == Character.CharacterType.wizard) {
-//            this.equipmentType = OffensiveEquipmentType.spell;
-//        }
-//    }
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

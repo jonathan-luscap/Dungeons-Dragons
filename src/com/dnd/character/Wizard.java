@@ -1,20 +1,29 @@
 package com.dnd.character;
 
+import com.dnd.equipment.Philter;
+import com.dnd.equipment.Spell;
+
 public class Wizard extends Adventurer {
-    private String type = "wizard";
-    private int attack = 6;
-    private int life = 15;
+
+    private int attack;
 
     public Wizard()
     {
+        super();
+        this.type = "wizard";
+        this.life = 15;
+        this.attack = 6;
+        this.offensiveEquipment = new Spell();
+        this.defensiveEquipment = new Philter();
     }
     public Wizard(String name)
     {
+        this();
         this.setName(name);
     }
     public Wizard(String name, String type)
     {
-        this.setName(name);
+        this(name);
         this.type = type;
     }
 

@@ -1,20 +1,30 @@
 package com.dnd.character;
 
+import com.dnd.equipment.OffensiveEquipment;
+import com.dnd.equipment.Shield;
+import com.dnd.equipment.Weapon;
+
 public class Warrior extends Adventurer {
-    private String type = "warrior";
-    private int attack = 10;
-    private int life = 10;
+
+    private int attack;
 
     public Warrior()
     {
+        super();
+        this.type = "warrior";
+        this.life = 10;
+        this.attack = 10;
+        this.offensiveEquipment = new Weapon();
+        this.defensiveEquipment = new Shield();
     }
     public Warrior(String name)
     {
+        this();
         this.setName(name);
     }
     public Warrior(String name, String type)
     {
-        this.setName(name);
+        this(name);
         this.type = type;
     }
 

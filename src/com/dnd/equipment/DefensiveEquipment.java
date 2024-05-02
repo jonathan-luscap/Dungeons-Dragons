@@ -1,22 +1,40 @@
 package com.dnd.equipment;
 
-public class DefensiveEquipment {
-    public enum OffensiveEquipmentType {
-        shield,
-        potion
+public abstract class DefensiveEquipment {
+
+    private String name;
+    private int defense;
+    private String type;
+
+    public abstract void parry();
+
+    public DefensiveEquipment() {
+        this.name = "";
+        this.defense = 0;
+        this.type = "";
     }
 
-    public String name;
-    public int defense;
-    OffensiveEquipment.OffensiveEquipmentType equipmentType;
+    public String getName() {
+        return name;
+    }
 
-//    public DefensiveEquipment(Character.CharacterType characterType)
-//    {
-//        if (characterType == Character.CharacterType.warrior){
-//            this.equipmentType = OffensiveEquipment.OffensiveEquipmentType.weapon;
-//        } else if (characterType == Character.CharacterType.wizard) {
-//            this.equipmentType = OffensiveEquipment.OffensiveEquipmentType.spell;
-//        }
-//    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }
