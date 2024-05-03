@@ -7,9 +7,7 @@ public class Spell extends OffensiveEquipment{
     }
 
     public Spell() {
-        super();
-        this.setAttack(3);
-        this.setType("wizard");
+        super("Eclair", 3, "wizard");
     }
 
     @Override

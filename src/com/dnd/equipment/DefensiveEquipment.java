@@ -14,6 +14,12 @@ public abstract class DefensiveEquipment {
         this.type = "";
     }
 
+    public DefensiveEquipment(String name, int defense, String type) {
+        this.name = name;
+        this.defense = defense;
+        this.type = type;
+    }
+
     public String getName() {
         return name;
     }

@@ -7,9 +7,7 @@ public class Shield extends DefensiveEquipment {
     }
 
     public Shield() {
-        super();
-        this.setDefense(4);
-        this.setType("warrior");
+        super("Boublier de bois", 4, "warrior");
     }
 
     @Override

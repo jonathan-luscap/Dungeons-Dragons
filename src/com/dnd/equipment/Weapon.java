@@ -8,7 +8,8 @@ public class Weapon extends OffensiveEquipment{
 
     public Weapon() {
         super();
-        this.setAttack(6);
+        this.setName("Epée");
+        this.setAttack(4);
         this.setType("warrior");
     }
 

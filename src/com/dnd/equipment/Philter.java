@@ -7,9 +7,7 @@ public class Philter extends DefensiveEquipment {
     }
 
     public Philter() {
-        super();
-        this.setDefense(8);
-        this.setType("wizard");
+        super("Fumigène", 5, "wizard");
     }
 
     @Override
