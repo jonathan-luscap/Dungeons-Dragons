@@ -61,5 +61,9 @@ public abstract class Menu {
    protected void badChoice() {
       System.out.println("Ce choix n'est pas valide.");
    }
+   protected void displaySpace(){
+      System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+   }
+   protected void pause(int time){}
 }
 

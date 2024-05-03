@@ -1,45 +1,62 @@
 package com.dnd.game;
 
 import com.dnd.character.Adventurer;
-import com.dnd.exception.StopGameException;
+import com.dnd.exception.*;
 import com.dnd.menu.ExitMenu;
+import com.dnd.menu.MainMenu;
+import com.dnd.menu.WinnerMenu;
 
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Game {
-    public boolean play(ArrayList<Adventurer> players) throws StopGameException {
+    public void gameLoop() throws StopGameException {
+        while (true) {
+            play(initiateGame());
+        }
+    }
+    private ArrayList<Adventurer> initiateGame() throws StopGameException {
+        ArrayList<Adventurer> players = new ArrayList<>();
+        MainMenu mainMenu = new MainMenu();
+        players = mainMenu.start(players);
+        return players;
+    }
+    private void play(ArrayList<Adventurer> players) throws StopGameException {
         boolean finish = false;
-        boolean continu = true;
         Random random = new Random();
-        while (!finish)
+        WinnerMenu winnerMenu = new WinnerMenu();
+        try
         {
-            for (Adventurer player : players) {
-                ExitMenu exitMenu = new ExitMenu();
-                int dieRoll = random.nextInt(6) + 1;
-                finish = newPosition(player, dieRoll);
-                if (finish)
-                {
-                    exitMenu.displayChoices();
-                    exitMenu.handleUserChoice(exitMenu.getIntResponse());
-                    break;
+            while (!finish)
+            {
+                for (Adventurer player : players) {
+                    int dieRoll = random.nextInt(6) + 1;
+                    finish = newPosition(player, dieRoll);
+                    if (finish)
+                    {
+                        throw new WinGameException(player);
+                    }
                 }
             }
         }
-        return continu;
+        catch (WinGameException winGameException)
+        {
+            winnerMenu.congrates(winGameException.getwinner());
+            winnerMenu.handleUserChoice(winnerMenu.getIntResponse());
+        }
     }
     private boolean newPosition(Adventurer player, int die)
     {
         boolean finish = false;
         System.out.println("\n" + player.getName() + " est sur la case " + player.getPosition() + ".");
-        System.out.println(player.getName() + " lance le dé et fait...\n\n\n\n");
+        System.out.println(player.getName() + " lance le dé et fait...\n\n\n");
         if (player.getPosition() + die == 64) {
             player.setPosition(player.getPosition() + die);
             finish = true;
         } else if (player.getPosition() + die > 64) {
             player.setPosition(128 - player.getPosition() - die);
-            System.out.println("Rebond sur la case arrivée...\n\n\n\n");
+            System.out.println("Rebond sur la case arrivée...\n\n\n");
         } else {
             player.setPosition(player.getPosition() + die);
         }

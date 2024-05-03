@@ -7,7 +7,7 @@ import com.dnd.exception.StopGameException;
 import java.util.ArrayList;
 
 public class MainMenu extends Menu{
-    public void start(ArrayList<Adventurer> players) throws StopGameException {
+    public ArrayList<Adventurer> start(ArrayList<Adventurer> players) throws StopGameException {
         try {
             while (true){
                 StartMenu startMenu = new StartMenu();
@@ -30,6 +30,7 @@ public class MainMenu extends Menu{
                 StartPlayingException startPlayingException) {
             System.out.println("*****    Ok, let's play folks !!   *****");
         }
+        return players;
     }
 
     @Override
