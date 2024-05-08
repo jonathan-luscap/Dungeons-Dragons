@@ -1,12 +1,12 @@
 package com.dnd.menu;
 
-import com.dnd.character.Adventurer;
+import com.dnd.character.Player;
 import com.dnd.exception.GoBackException;
 import com.dnd.exception.StopGameException;
+import com.dnd.exception.TypeMismatchException;
 
 public class ModifyAttributeMenu extends Menu{
 
-    @Override
     public void displayChoices() {
         introMenu();
         System.out.println("\t|\t1.Modifier le nom");
@@ -15,7 +15,7 @@ public class ModifyAttributeMenu extends Menu{
         System.out.println("\t|\t4.Arrêter le jeu");
     }
 
-    public Adventurer handleUserChoice(Adventurer player, int choice) throws StopGameException, GoBackException {
+    public Player handleUserChoice(Player player, int choice) throws StopGameException, GoBackException, TypeMismatchException {
         ModifyAttributeMenu.possibleResponses response = ModifyAttributeMenu.possibleResponses.values()[choice - 1];
         switch (response)
         {
@@ -28,14 +28,14 @@ public class ModifyAttributeMenu extends Menu{
         return player;
     }
 
-    private Adventurer modifyName(Adventurer player) {
+    private Player modifyName(Player player) {
         GiveName giveName = new GiveName();
         giveName.displayChoices();
         player = giveName.addName(player);
         return player;
     }
 
-    private Adventurer modifyType(Adventurer player) throws StopGameException {
+    private Player modifyType(Player player) throws StopGameException, TypeMismatchException {
         ModifyTypeMenu modifyTypeMenu = new ModifyTypeMenu();
         modifyTypeMenu.displayChoices();
         player = modifyTypeMenu.handleUserChoice(player, modifyTypeMenu.getIntResponse());

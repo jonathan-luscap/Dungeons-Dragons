@@ -1,13 +1,13 @@
 package com.dnd.menu;
 
-import com.dnd.character.Adventurer;
+import com.dnd.character.Player;
 import com.dnd.exception.StartPlayingException;
 import com.dnd.exception.StopGameException;
 
 import java.util.ArrayList;
 
 public class MainMenu extends Menu{
-    public ArrayList<Adventurer> start(ArrayList<Adventurer> players) throws StopGameException {
+    public ArrayList<Player> start(ArrayList<Player> players) throws StopGameException {
         try {
             while (true){
                 StartMenu startMenu = new StartMenu();
@@ -32,7 +32,4 @@ public class MainMenu extends Menu{
         }
         return players;
     }
-
-    @Override
-    public void displayChoices() {}
 }

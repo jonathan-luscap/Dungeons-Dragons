@@ -3,10 +3,10 @@ package com.dnd.menu;
 
 import com.dnd.character.*;
 import com.dnd.exception.StopGameException;
+import com.dnd.exception.TypeMismatchException;
 
 public class ModifyTypeMenu extends Menu{
 
-    @Override
     public void displayChoices() {
         introMenu();
         System.out.println("\t|\t1.Votre personnage sera un Guerrier");
@@ -15,7 +15,7 @@ public class ModifyTypeMenu extends Menu{
         System.out.println("\t|\t4.Arrêter le jeu");
     }
 
-    public Adventurer handleUserChoice(Adventurer player, int choice) throws StopGameException {
+    public Player handleUserChoice(Player player, int choice) throws StopGameException, TypeMismatchException {
         ModifyTypeMenu.possibleResponses response = ModifyTypeMenu.possibleResponses.values()[choice - 1];
         switch (response)
         {
@@ -28,7 +28,7 @@ public class ModifyTypeMenu extends Menu{
         return player;
     }
 
-    private Adventurer makeWarrior(Adventurer player) {
+    private Player makeWarrior(Player player) throws TypeMismatchException {
         if (player instanceof Wizard)
         {
             String name = player.getName();
@@ -38,7 +38,7 @@ public class ModifyTypeMenu extends Menu{
         return player;
     }
 
-    private Adventurer makeWizard(Adventurer player) {
+    private Player makeWizard(Player player) throws TypeMismatchException {
         if (player instanceof Warrior)
         {
             String name = player.getName();

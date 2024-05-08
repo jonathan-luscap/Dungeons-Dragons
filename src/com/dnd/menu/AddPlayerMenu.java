@@ -1,6 +1,7 @@
 package com.dnd.menu;
 
-import com.dnd.character.Adventurer;
+import com.dnd.character.Persona;
+import com.dnd.character.Player;
 import com.dnd.character.Warrior;
 import com.dnd.character.Wizard;
 import com.dnd.exception.*;
@@ -9,7 +10,6 @@ import java.util.ArrayList;
 
 public class AddPlayerMenu extends Menu{
 
-    @Override
     public void displayChoices() {
         introMenu();
         System.out.println("\t|\t1.Votre personnage sera un Guerrier");
@@ -18,7 +18,7 @@ public class AddPlayerMenu extends Menu{
         System.out.println("\t|\t4.Arrêter le jeu");
     }
 
-    public ArrayList<Adventurer> handleUserChoice(ArrayList<Adventurer> players, int choice) throws StopGameException, GoBackException {
+    public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StopGameException, GoBackException, TypeMismatchException {
         AddPlayerMenu.possibleResponses response = AddPlayerMenu.possibleResponses.values()[choice - 1];
         switch (response)
         {
@@ -31,8 +31,8 @@ public class AddPlayerMenu extends Menu{
         return players;
     }
 
-    private ArrayList<Adventurer> createWarrior(ArrayList<Adventurer> players) {
-        Adventurer warrior = new Warrior();
+    private ArrayList<Player> createWarrior(ArrayList<Player> players) throws TypeMismatchException {
+        Player warrior = new Warrior();
         GiveName giveName = new GiveName();
         giveName.displayChoices();
         warrior = giveName.addName(warrior);
@@ -40,8 +40,8 @@ public class AddPlayerMenu extends Menu{
         return players;
     }
 
-    private ArrayList<Adventurer> createWizard(ArrayList<Adventurer> players) {
-        Adventurer wizard = new Wizard();
+    private ArrayList<Player> createWizard(ArrayList<Player> players) throws TypeMismatchException {
+        Player wizard = new Wizard();
         GiveName giveName = new GiveName();
         giveName.displayChoices();
         wizard = giveName.addName(wizard);

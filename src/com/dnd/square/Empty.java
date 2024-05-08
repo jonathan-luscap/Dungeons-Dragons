@@ -1,13 +1,19 @@
 package com.dnd.square;
 
-import com.dnd.character.Adventurer;
+import com.dnd.character.Persona;
+import com.dnd.character.Player;
+import com.dnd.exception.PlayerDiedException;
+import com.dnd.interact.EmptyDisplayer;
 
 public class Empty implements Square {
     @Override
-    public void interact(Adventurer player) {}
+    public String toString() {
+        return "Vide";
+    }
 
     @Override
-    public String toString() {
-        return "Empty{}";
+    public void interact(Player player) throws PlayerDiedException {
+        EmptyDisplayer emptyDisplayer = new EmptyDisplayer();
+        emptyDisplayer.find(player.getName());
     }
 }

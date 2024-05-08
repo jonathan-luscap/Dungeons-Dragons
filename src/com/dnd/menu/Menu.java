@@ -8,53 +8,60 @@ public abstract class Menu {
    Scanner sc = new Scanner(System.in);
    protected void introMenu()
    {
-      System.out.println("Entrez le numéro de l'option choisie :");
+      System.out.println("\n_________________________________________________________________________________________________\n" +
+              "Entrez le numéro de l'option choisie :");
    }
-   public abstract void displayChoices();
-   protected int isValidIntResponse(String response) throws BadIntException {
-      int validatedResponse = 0;
+   protected int isValidIntResponse() throws BadIntException {
+      String response = sc.nextLine();
+      int choice = 0;
 
-      if (response.matches("^[1-9]$"))
+      if (response.matches("^[1-9]*$"))
       {
-         validatedResponse =  Integer.parseInt(response);
+         choice =  Integer.parseInt(response);
       }
       else
       {
          throw new BadIntException();
       }
-      return validatedResponse;
+      return choice;
    }
-   protected String isValidStringResponse(String response) throws BadStringException {
-      if (response.matches("^[A-Za-z0-9 '-]{3,20}$"))
-      {
-         return  response;
+   protected String isValidStringResponse() throws BadStringException {
+      String response = sc.nextLine();
+      if (response.matches("^[A-Za-z0-9 '-]{3,20}$")) {
+
       }
       else
       {
          throw new BadStringException();
       }
+      return  response;
    }
    public int getIntResponse(){
       int userChoice = 0;
       try
       {
-         userChoice = isValidIntResponse(sc.nextLine());
+         userChoice = isValidIntResponse();
       }
       catch (BadIntException e)
       {
-         System.out.println("Veuillez saisir un nombre entier :" + e);
+         System.out.println("Veuillez saisir un nombre entier.");
       }
       return userChoice;
    }
    public String getStringResponse(){
+      boolean isNotCorrect = true;
       String userInput = "";
-      try
-      {
-         userInput = isValidStringResponse(sc.nextLine());
-      }
-      catch (BadStringException e)
-      {
-         System.out.println("Des lettres en minuscule ou majuscule,\n des chiffres, \"'\" apostrophes, \" \" espaces ou \"-\" tirets du 6.");
+      while (isNotCorrect){
+         try
+         {
+            userInput = isValidStringResponse();
+            isNotCorrect = false;
+         }
+         catch (BadStringException e)
+         {
+            System.out.println("Des lettres en minuscule ou majuscule, des chiffres, \"'\" apostrophes, \" \" espaces ou \"-\" tirets du 6.");
+            System.out.println("Entrer à nouveau, svp.");
+         }
       }
       return userInput;
    }
@@ -64,6 +71,15 @@ public abstract class Menu {
    protected void displaySpace(){
       System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
    }
-   protected void pause(int time){}
+   public void pause(int time){
+      try
+      {
+         Thread.sleep(time);
+      }
+      catch (InterruptedException e)
+      {
+         System.out.println("Something went wrong with the tempo..." + e);
+      }
+   }
 }
 
