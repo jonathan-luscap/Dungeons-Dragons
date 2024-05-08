@@ -1,11 +1,9 @@
 package com.dnd.menu;
 
-import com.dnd.exception.StartPlayingException;
 import com.dnd.exception.*;
 
 public class ExitMenu extends Menu{
 
-    @Override
     public void displayChoices()
     {
         introMenu();
@@ -38,10 +36,6 @@ public class ExitMenu extends Menu{
 
         possibleResponses(int userChoice){
             this.userChoice = userChoice;
-        }
-
-        public int getUserChoice() {
-            return userChoice;
         }
     }
 }

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class DisplayCharacterMenu extends Menu{
 
-    @Override
     public void displayChoices() {
         introMenu();
         System.out.println("\t|\t1.Modifier un personnage");
@@ -16,11 +15,11 @@ public class DisplayCharacterMenu extends Menu{
         System.out.println("\t|\t3.Arrêter le jeu");
     }
 
-    public void displayPlayers(ArrayList<Adventurer> players)
+    public void displayPlayers(ArrayList<Player> players)
     {
-        System.out.println("**** Liste des participants à l'aventure ****");
+        System.out.println("*****     Liste des participants à l'aventure     *****");
         int count = 1;
-        for (Adventurer player : players)
+        for (Persona player : players)
         {
             System.out.println("Aventurier n°" + count + " :");
             System.out.println(player);
@@ -28,7 +27,7 @@ public class DisplayCharacterMenu extends Menu{
         }
     }
 
-    public ArrayList<Adventurer> handleUserChoice(ArrayList<Adventurer> players, int choice) throws StopGameException, GoBackException {
+    public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StopGameException, GoBackException {
         DisplayCharacterMenu.possibleResponses response = DisplayCharacterMenu.possibleResponses.values()[choice - 1];
         switch (response)
         {
@@ -42,7 +41,7 @@ public class DisplayCharacterMenu extends Menu{
         return players;
     }
 
-    private ArrayList<Adventurer> modifyPlayer(ArrayList<Adventurer> players) throws StopGameException {
+    private ArrayList<Player> modifyPlayer(ArrayList<Player> players) throws StopGameException {
         ModifyCharacterMenu modifyCharacterMenu = new ModifyCharacterMenu();
         modifyCharacterMenu.displayChoices();
         players = modifyCharacterMenu.handleUserChoice(players, modifyCharacterMenu.getIntResponse());

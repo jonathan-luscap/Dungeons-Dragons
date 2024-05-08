@@ -7,7 +7,6 @@ import com.dnd.exception.StartPlayingException;
 
 public class StartMenu extends Menu {
 
-    @Override
     public void displayChoices() {
         introMenu();
         System.out.println("\t|\t1.Ajouter un joueur");
@@ -16,7 +15,7 @@ public class StartMenu extends Menu {
         System.out.println("\t|\t4.Arrêter le jeu");
     }
 
-    public ArrayList<Adventurer> handleUserChoice(ArrayList<Adventurer> players, int choice) throws StartPlayingException, StopGameException, ArrayIndexOutOfBoundsException {
+    public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StartPlayingException, StopGameException, ArrayIndexOutOfBoundsException {
 
         possibleResponses response = possibleResponses.values()[choice - 1];
         switch (response)
@@ -30,20 +29,21 @@ public class StartMenu extends Menu {
         return players;
     }
 
-    private ArrayList<Adventurer> addPlayer(ArrayList<Adventurer> players) throws StopGameException {
+    private ArrayList<Player> addPlayer(ArrayList<Player> players) throws StopGameException {
         AddPlayerMenu addPlayerMenu = new AddPlayerMenu();
         addPlayerMenu.displayChoices();
         int response = addPlayerMenu.getIntResponse();
-        try
-        {
+        try {
             players = addPlayerMenu.handleUserChoice(players, response);
 
+        } catch (TypeMismatchException typeMismatchException) {
+            System.out.println("Something went wrong while character creation.");
         }
         catch (GoBackException goBackException){}
         return players;
     }
 
-    private ArrayList<Adventurer> displayPlayers(ArrayList<Adventurer> players) throws StopGameException {
+    private ArrayList<Player> displayPlayers(ArrayList<Player> players) throws StopGameException {
         DisplayCharacterMenu displayCharacterMenu = new DisplayCharacterMenu();
         displayCharacterMenu.displayPlayers(players);
         displayCharacterMenu.displayChoices();

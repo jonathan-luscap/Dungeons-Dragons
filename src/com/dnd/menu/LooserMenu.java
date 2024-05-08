@@ -1,13 +1,11 @@
 package com.dnd.menu;
 
-import com.dnd.character.Player;
 import com.dnd.exception.StopGameException;
 
-public class WinnerMenu extends Menu {
+public class LooserMenu extends Menu {
 
-    public void congrates(Player winner) {
-        System.out.println("****    La partie est finie!    ****\n\n");
-        System.out.println("\t\t" + winner.getName() + " l'emporte\n\n\n\n");
+    public void everybodyDied() {
+        System.out.println("Oh non, tout le monde est mort au combat....");
         introMenu();
         System.out.println("1.Refaire une partie");
         System.out.println("2.Arrêter le jeu");
@@ -22,7 +20,6 @@ public class WinnerMenu extends Menu {
         }
         return newgame;
     }
-
     private boolean newGame() {
         return true;
     }
@@ -30,7 +27,6 @@ public class WinnerMenu extends Menu {
     private void endGame() throws StopGameException {
         throw new StopGameException();
     }
-
     public enum possibleResponses{
         NEWGAME(1), ENDGAME(2);
 
