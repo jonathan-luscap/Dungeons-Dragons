@@ -12,7 +12,7 @@ public class Empty implements Square {
     }
 
     @Override
-    public void interact(Player player) throws PlayerDiedException {
+    public void interact(Player player) {
         EmptyDisplayer emptyDisplayer = new EmptyDisplayer();
         emptyDisplayer.find(player.getName());
     }

@@ -3,30 +3,10 @@ package com.dnd.interact;
 import com.dnd.equipment.defensive.DefensiveEquipment;
 import com.dnd.equipment.offensive.OffensiveEquipment;
 
-public class EquipmentDisplayer implements Displayer{
-    @Override
+public class EquipmentDisplayer extends Displayer{
+
     public void find(String playerName, String equipmentType, int power) {
         System.out.println("\n" + playerName + " trouve un(e) " + equipmentType + " de niveau " + power + ".");
-    }
-
-    @Override
-    public void find(String playerName, String type, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
-
-    }
-
-    @Override
-    public void find(String playerName, String type) {
-
-    }
-
-    @Override
-    public void find(String name) {
-
-    }
-
-    @Override
-    public void find(String playerName, int life, int attack, int defense) {
-
     }
 
     public void typeMatch() {

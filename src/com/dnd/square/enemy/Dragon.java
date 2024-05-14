@@ -46,7 +46,7 @@ public class Dragon extends Enemy{
                     dragonDisplayer.playerMark();
                     this.life = this.life - damage;
                     dragonDisplayer.damage(damage);
-                    if (this.life < 0){
+                    if (this.life <= 0){
                         dragonDisplayer.dragonDied();
                         throw new DragonDiedException(player);
                     }

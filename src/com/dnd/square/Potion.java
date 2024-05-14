@@ -24,7 +24,7 @@ public class Potion implements Square{
     }
 
     @Override
-    public void interact(Player player) throws PlayerDiedException {
+    public void interact(Player player) {
         potionDisplayer.find(player.getName(), type, life);
         if (player.getLife() < player.getMaxLife()){
             int newLife = player.getLife() + life;

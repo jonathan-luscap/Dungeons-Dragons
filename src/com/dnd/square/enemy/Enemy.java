@@ -37,7 +37,7 @@ public abstract class Enemy extends Persona implements Square {
             }
             attack(player, turn);
         } else {
-            enemyDisplayer.find(player.getName(), this.type);
+            enemyDisplayer.findDeadbody(player.getName(), this.type);
         }
     }
 
