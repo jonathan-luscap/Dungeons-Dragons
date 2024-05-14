@@ -7,23 +7,8 @@ import com.dnd.menu.MainMenu;
 public abstract class Displayer {
     MainMenu mainMenu = new MainMenu();
 
-    void find(String playerName, String equipmentName, int power) {
 
-    }
 
-    void find(String playerName, String enemyType, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
 
-    }
 
-    void find(String playerName, String type) {
-
-    }
-
-    void find(String name) {
-
-    }
-
-    void find(String playerName, int life, int attack, int defense) {
-
-    }
 }

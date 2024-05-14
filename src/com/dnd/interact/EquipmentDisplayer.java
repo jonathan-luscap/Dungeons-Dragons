@@ -1,8 +1,5 @@
 package com.dnd.interact;
 
-import com.dnd.equipment.defensive.DefensiveEquipment;
-import com.dnd.equipment.offensive.OffensiveEquipment;
-
 public class EquipmentDisplayer extends Displayer{
 
     public void find(String playerName, String equipmentType, int power) {
