@@ -1,6 +1,6 @@
 package com.dnd.interact;
 
-public class DieDisplayer {
+public class DieDisplayer extends Displayer{
     public void dieFaces(int number)
     {
         switch (number)
