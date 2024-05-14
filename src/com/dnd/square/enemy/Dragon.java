@@ -15,12 +15,14 @@ import java.util.Random;
 
 public class Dragon extends Enemy{
     Random random = new Random();
-    private int attack = 4 + random.nextInt(4);
-    private int defense = 4 + random.nextInt(4);
+    private int attack;
+    private int defense;
 
     public Dragon() {
         super("dragon",null, null);
         this.life =  10 + random.nextInt(10);
+        this.attack = 4 + random.nextInt(4);
+        this.defense = 4 + random.nextInt(4);
     }
 
     @Override

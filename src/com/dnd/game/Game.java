@@ -23,7 +23,7 @@ public class Game {
     DisplayCharacterMenu displayCharacterMenu = new DisplayCharacterMenu();
     LooserMenu looserMenu = new LooserMenu();
     MainMenu mainMenu = new MainMenu();
-    private int capacity = 40;
+    private int capacity = 64;
     ArrayList<Square> gameBoard = new ArrayList<>();
 
     public void gameLoop() throws StopGameException {
@@ -76,24 +76,18 @@ public class Game {
         }
     }
     private void newPosition(Player player, int die) throws PlayerDiedException, DragonDiedException, DragonPeaceException {
-        int newPosition = 0;
+        int newPosition = player.getPosition() + die;
         if (player.getPosition() == 0) {
             System.out.println("\n" + player.getName() + " est sur la case départ.");
         } else {
             System.out.println("\n" + player.getName() + " est sur la case " + player.getPosition() + ".");
         }
         System.out.println(player.getName() + " lance le dé...\n\n\n");
-        if (player.getPosition() + die == gameBoard.toArray().length - 1) {
-            newPosition = player.getPosition() + die;
-            player.setPosition(newPosition);
-        } else if (player.getPosition() + die > gameBoard.toArray().length - 1) {
-            newPosition = gameBoard.toArray().length * 2 - player.getPosition() - die;
-            player.setPosition(newPosition);
+        if (newPosition > gameBoard.toArray().length - 1) {
+            newPosition = gameBoard.toArray().length * 2 - newPosition;
             System.out.println("Rebond sur la case arrivée...\n\n\n");
-        } else {
-            newPosition = player.getPosition() + die;
-            player.setPosition(newPosition);
         }
+        player.setPosition(newPosition);
         System.out.println("Il fait " + die + " et avance donc jusqu'à la case " + player.getPosition() + ".");
         gameBoard.get(newPosition).interact(player);
     }
@@ -103,8 +97,8 @@ public class Game {
         int emptySquare = (int)(this.capacity * 0.1563);
         int enemySquare = (int)(this.capacity * 0.2344) + random.nextInt(5);
         int equipmentSquare = (int)(this.capacity * 0.25) + random.nextInt(3);
-        int potionSquare = this.capacity - emptySquare - equipmentSquare - enemySquare;
-//        int surpriseSquare = capacity - emptySquare - equipmentSquare - potionSquare - enemySquare;
+        int potionSquare = (int)(this.capacity * 0.1921) + random.nextInt(4);
+        int surpriseSquare = capacity - emptySquare - equipmentSquare - potionSquare - enemySquare;
         for (int i = 0; i < emptySquare; i++){
             temp.add(new Empty());
         }
@@ -117,6 +111,9 @@ public class Game {
         for (int i = 0; i < potionSquare; i++){
             temp.add(new Potion());
         }
+        for (int i = 0; i < surpriseSquare; i++){
+            temp.add(new Surprise());
+        }
         Collections.shuffle(temp);
         gameBoard.add(new Empty());
         for (int i = 1; i < this.capacity + 1; i++) {
@@ -124,21 +121,6 @@ public class Game {
         }
         gameBoard.add(new Dragon());
     }
-
-    private Square selectSquare() {
-        Dice dice = new D5();
-        Square square = null;
-        int squareType = dice.roll();
-        switch (squareType){
-            case 1 -> square = new Empty();
-            case 2 -> square = selectEnemy();
-            case 3 -> square = selectEquipment();
-            case 4 -> square = new Potion();
-            case 5 -> square = new Surprise();
-        }
-        return square;
-    }
-
     private Square selectEnemy() {
         Dice dice = new D2();
         Enemy enemy = null;
@@ -163,25 +145,10 @@ public class Game {
         }
         return equipment;
     }
-
-    private boolean fullGameBoard(){
-        boolean full = true;
-        if (gameBoard.isEmpty()) {
-            return false;
-        } else {
-            for (Square position : gameBoard){
-                if (position == null){
-                    full = false;
-                }
-            }
-        }
-        return full;
-    }
     private void displayGameBoard(){
         int count =0;
         for (Square square : gameBoard){
             System.out.println("\nCase n°" + count + ": " + square);
-            mainMenu.pause(500);
             count++;
         }
     }

@@ -5,74 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfea3a23-9141-46af-b5fd-1c684a89c475" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/dice/D2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipmentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/SmokeBomb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/WoodShield.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Flash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipmentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Sword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/exception/AllPlayersDiedEception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/exception/DragonDiedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/exception/DragonPeaceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/exception/PlayerDiedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/exception/TypeMismatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/Displayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/DragonDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/EmptyDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/EnemyDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/EquipmentDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/MagicalGemDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/PeaceDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/PlayerDiedDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/PotionDisplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/menu/DragonPeaceMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/menu/LooserMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/square/enemy/Dragon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/square/enemy/Goblin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/square/enemy/Sorcerer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dnd/interact/SurpriseDisplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Adventurer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/character/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/character/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/DefensiveEquipment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/OffensiveEquipment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Philter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Shield.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Spell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Weapon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/SquareIsNotSquareException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/exception/SquareIsNotSquareException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/WinGameException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dnd/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/AddPlayerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/AddPlayerMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/DisplayCharacterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/DisplayCharacterMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/ExitMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/GiveName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/GiveName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyAttributeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/ModifyAttributeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyCharacterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/ModifyCharacterMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyTypeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/ModifyTypeMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/WinnerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/WinnerMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Equipment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Flash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Surprise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/Surprise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Sword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/enemy/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/square/enemy/Dragon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "third",
     "kotlin-language-version-configured": "true",
@@ -161,6 +98,7 @@
       <workItem from="1714235208400" duration="31512000" />
       <workItem from="1714578643433" duration="19105000" />
       <workItem from="1714717626734" duration="5290000" />
+      <workItem from="1715315367608" duration="5116000" />
     </task>
     <servers />
   </component>
@@ -185,6 +123,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/dnd/game/Game.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
