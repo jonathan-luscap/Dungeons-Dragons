@@ -15,7 +15,7 @@ public abstract class Menu {
       String response = sc.nextLine();
       int choice = 0;
 
-      if (response.matches("^[1-9]*$"))
+      if (response.matches("^[1-9]+$"))
       {
          choice =  Integer.parseInt(response);
       }

@@ -5,10 +5,11 @@ import com.dnd.equipment.Equipment;
 import com.dnd.interact.EquipmentDisplayer;
 
 import java.util.Objects;
+import java.util.Random;
 
 
 public class OffensiveEquipment extends Equipment {
-
+    Random random = new Random();
     protected int damage;
     protected boolean taken;
 

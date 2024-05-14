@@ -7,6 +7,7 @@ public class EnemyDisplayer extends Displayer{
 
     public void find(String playerName, String type, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
         System.out.println(playerName + " tombe sur un " + type + ".\n");
+        mainMenu.pause(1000);
         System.out.println("\tNombre de vies : " + life +
                 offensiveEquipment + defensiveEquipment + "\n");
     }
@@ -32,10 +33,12 @@ public class EnemyDisplayer extends Displayer{
 
     public void enemyEscape(String type) {
         System.out.println("Le " + type +" s'enfuit à toute vitesse !");
+        mainMenu.pause(500);
     }
 
     public void fail() {
         System.out.println("Son attaque échoue.");
+        mainMenu.pause(500);
     }
 
     public void playerAttack(String name) {
@@ -50,5 +53,6 @@ public class EnemyDisplayer extends Displayer{
 
     public void enemyDied(String type) {
         System.out.println("Le " + type + " meurt.");
+        mainMenu.pause(2000);
     }
 }

@@ -7,6 +7,7 @@ public class DragonDisplayer extends Displayer{
 
     public void find(String playerName, int life, int attack, int defense) {
         System.out.println(playerName + " tombe sur le dragon !!");
+        mainMenu.pause(1000);
         System.out.println("\tNombre de vies : " + life + "\n\t" +
                 "Niveau d'attaque : " + attack + "\n\t" +
                 "Niveau de défense : " + defense);
@@ -43,9 +44,11 @@ public class DragonDisplayer extends Displayer{
 
     public void dragonDied() {
         System.out.println("Le dragon est mort....");
+        mainMenu.pause(2000);
     }
 
     public void parade(String playerName,int newPosition) {
-        System.out.println("Il rugit de fureur et renvoie " + playerName + " à la case n°" + newPosition + ".\n\n\n");
+        System.out.println("Il rugit de fureur et renvoie " + playerName + " à la case n°" + newPosition + ".");
+        mainMenu.pause(1000);
     }
 }

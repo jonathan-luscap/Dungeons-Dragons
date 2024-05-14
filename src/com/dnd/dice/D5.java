@@ -8,9 +8,4 @@ public class D5 implements Dice {
     public int roll() {
         return random.nextInt(5) + 1;
     }
-
-    @Override
-    public boolean binary() {
-        return false;
-    }
 }

@@ -106,7 +106,7 @@ public class Game {
         ArrayList<Square> temp = new ArrayList<>();
         int emptySquare = (int)(this.capacity * 0.1563);
         int enemySquare = (int)(this.capacity * 0.2344) + random.nextInt(5);
-        int equipmentSquare = (int)(this.capacity * 0.25) + random.nextInt(3);
+        int equipmentSquare = (int)(this.capacity * 0.3) + random.nextInt(3);
         int potionSquare = (int)(this.capacity * 0.1965) + random.nextInt(3);
         int surpriseSquare = capacity - emptySquare - equipmentSquare - potionSquare - enemySquare;
         for (int i = 0; i < emptySquare; i++){
@@ -147,9 +147,9 @@ public class Game {
     }
 
     private Square selectEnemy() {
-        Dice dice = new D2();
+        D2 d2 = new D2();
         Enemy enemy = null;
-        boolean enemyType = dice.binary();
+        boolean enemyType = d2.binary();
         if (enemyType) {
             enemy = new Goblin();
         } else {
@@ -159,7 +159,7 @@ public class Game {
     }
 
     private Square selectEquipment() {
-        Dice dice = new D4();
+        Dice dice = new D8();
         Equipment equipment = null;
         int equipmentType = dice.roll();
         switch (equipmentType){
@@ -167,6 +167,10 @@ public class Game {
             case 2 -> equipment = new Flash();
             case 3 -> equipment = new WoodShield();
             case 4 -> equipment = new SmokeBomb();
+            case 5 -> equipment = new Mace();
+            case 6 -> equipment = new Fireball();
+            case 7 -> equipment = new IronShield();
+            case 8 -> equipment = new Teleportation();
         }
         return equipment;
     }

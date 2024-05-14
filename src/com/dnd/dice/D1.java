@@ -5,9 +5,4 @@ public class D1 implements Dice {
     public int  roll(){
         return 1;
     }
-
-    @Override
-    public boolean binary() {
-        return false;
-    }
 }

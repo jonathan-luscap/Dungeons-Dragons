@@ -19,5 +19,6 @@ public class PotionDisplayer extends Displayer{
 
     public void newLife(Player player) {
         System.out.println("\tIl a maintenant " + player.getLife() + " vies.");
+        mainMenu.pause(2000);
     }
 }

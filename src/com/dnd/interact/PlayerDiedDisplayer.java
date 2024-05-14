@@ -7,5 +7,6 @@ public class PlayerDiedDisplayer extends Displayer {
 
     public void find(String name) {
         System.out.println(name + " est mort en combattant valeureusement et malheureusement !!!");
+        mainMenu.pause(3000);
     }
 }

@@ -1,9 +1,6 @@
 package com.dnd.equipment.offensive;
 
-import java.util.Random;
-
 public class Sword extends OffensiveEquipment {
-    Random random = new Random();
 
     public Sword(String playerType) {
         super("Epée",  playerType);

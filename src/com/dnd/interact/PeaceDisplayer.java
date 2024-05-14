@@ -6,7 +6,8 @@ import com.dnd.equipment.offensive.OffensiveEquipment;
 public class PeaceDisplayer extends Displayer{
 
     public void find(String name) {
-        System.out.println("Le dragon et " + name + " se regardent dans les yeux...");
-        System.out.println("...ils se relachent et chacun rengaine...");
+        System.out.print("Le dragon et " + name + " se regardent dans les yeux...");
+        mainMenu.pause(3000);
+        System.out.println("\t...ils se relachent et chacun rengaine...");
     }
 }
