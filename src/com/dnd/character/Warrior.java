@@ -7,7 +7,7 @@ import com.dnd.exception.TypeMismatchException;
 public class Warrior extends Player {
 
     public Warrior() throws TypeMismatchException {
-        super("guerrier", 10, OffensiveEquipmentFactory.equip("guerrier"), DefensiveEquipmentFactory.equip("guerrier"));
+        super(PersonaType.guerrier, 10, OffensiveEquipmentFactory.equip(PersonaType.guerrier), DefensiveEquipmentFactory.equip(PersonaType.guerrier));
     }
 
     public String getName()

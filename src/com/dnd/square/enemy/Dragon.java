@@ -19,7 +19,7 @@ public class Dragon extends Enemy{
     private int defense = 4 + random.nextInt(4);
 
     public Dragon() {
-        super("dragon",null, null);
+        super(PersonaType.monstre,null, null);
         this.life =  10 + random.nextInt(10);
     }
 

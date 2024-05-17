@@ -1,12 +1,13 @@
 package com.dnd.character;
 
+import com.dnd.connection.DatabaseAccessObject;
 import com.dnd.equipment.defensive.DefensiveEquipment;
 import com.dnd.equipment.offensive.OffensiveEquipment;
 
 public abstract class Persona {
     protected String name;
     protected int life;
-    protected String type = "";
+    protected PersonaType type;
     protected OffensiveEquipment offensiveEquipment;
     protected DefensiveEquipment defensiveEquipment;
 
@@ -18,7 +19,7 @@ public abstract class Persona {
         this.defensiveEquipment = null;
     }
 
-    public Persona(String type, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
+    public Persona(PersonaType type, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
         this.name = null;
         this.life = life;
         this.type = type;
@@ -26,7 +27,7 @@ public abstract class Persona {
         this.defensiveEquipment = defensiveEquipment;
     }
 
-    public Persona(String type, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
+    public Persona(PersonaType type, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
         this.name = null;
         this.life = 0;
         this.type = type;
@@ -51,11 +52,11 @@ public abstract class Persona {
         this.life = life;
     }
 
-    public String getType() {
+    public PersonaType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(PersonaType type) {
         this.type = type;
     }
 
@@ -81,5 +82,8 @@ public abstract class Persona {
         } else {
             return true;
         }
+    }
+    public enum PersonaType{
+        guerrier, sorcier, monstre
     }
 }

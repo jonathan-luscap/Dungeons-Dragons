@@ -1,5 +1,6 @@
 package com.dnd.equipment.offensive;
 
+import com.dnd.character.Persona;
 import com.dnd.character.Player;
 import com.dnd.equipment.Equipment;
 import com.dnd.interact.EquipmentDisplayer;
@@ -19,13 +20,13 @@ public class OffensiveEquipment extends Equipment {
         this.taken = false;
     }
 
-    public OffensiveEquipment(String type, String playerType) {
+    public OffensiveEquipment(String type, Persona.PersonaType playerType) {
         super(type, playerType);
         this.damage = 0;
         this.taken = false;
     }
 
-    public OffensiveEquipment(String type, String playerType, int damage) {
+    public OffensiveEquipment(String type, Persona.PersonaType playerType, int damage) {
         super(type, playerType);
         this.damage = damage;
         this.taken = false;
@@ -57,6 +58,7 @@ public class OffensiveEquipment extends Equipment {
                     equipmentDisplayer.betterOne(player.getOffensiveEquipment().getType(), player.getOffensiveEquipment().getDamage(), this.type, this.damage);
                     player.getOffensiveEquipment().setDamage(this.damage);
                     player.getOffensiveEquipment().setType(this.type);
+//                    player.setOffensiveEquipment(this);
                     this.taken = true;
                 } else {
                     equipmentDisplayer.drop();

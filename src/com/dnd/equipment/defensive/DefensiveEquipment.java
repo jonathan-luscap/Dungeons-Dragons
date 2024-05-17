@@ -1,5 +1,6 @@
 package com.dnd.equipment.defensive;
 
+import com.dnd.character.Persona;
 import com.dnd.character.Player;
 import com.dnd.equipment.Equipment;
 import com.dnd.interact.EquipmentDisplayer;
@@ -19,13 +20,13 @@ public class DefensiveEquipment extends Equipment {
         this.taken = false;
     }
 
-    public DefensiveEquipment(String type, String playerType) {
+    public DefensiveEquipment(String type, Persona.PersonaType playerType) {
         super(type, playerType);
         this.defense = 0;
         this.taken = false;
     }
 
-    public DefensiveEquipment(String type, String playerType, int defense) {
+    public DefensiveEquipment(String type, Persona.PersonaType playerType, int defense) {
         super(type, playerType);
         this.defense = defense;
         this.taken = false;

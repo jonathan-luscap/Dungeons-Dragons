@@ -21,7 +21,7 @@ public class DisplayCharacterMenu extends Menu{
         int count = 1;
         for (Persona player : players)
         {
-            System.out.println("Aventurier n°" + count + " :");
+            System.out.println("\nAventurier n°" + count + " :");
             System.out.println(player);
             count++;
         }

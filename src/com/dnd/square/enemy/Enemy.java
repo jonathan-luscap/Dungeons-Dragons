@@ -21,23 +21,23 @@ public abstract class Enemy extends Persona implements Square {
     D2 d2 = new D2();
     D6 d6 = new D6();
 
-    public Enemy(String type, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
+    public Enemy(PersonaType type, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
         super(type, offensiveEquipment, defensiveEquipment);
     }
 
     @Override
     public void interact(Player player) throws PlayerDiedException, DragonDiedException, DragonPeaceException {
         if (!dead) {
-            enemyDisplayer.find(player.getName(), this.type, this.life, this.offensiveEquipment, this.defensiveEquipment);
+            enemyDisplayer.find(player.getName(), this.getClass().getName(), this.life, this.offensiveEquipment, this.defensiveEquipment);
             boolean turn = d2.binary();
             if ((turn)) {
-                enemyDisplayer.enemyAttack(this.type);
+                enemyDisplayer.enemyAttack(this.getClass().getName());
             } else {
                 enemyDisplayer.playerAttack(player.getName());
             }
             attack(player, turn);
         } else {
-            enemyDisplayer.findDeadbody(player.getName(), this.type);
+            enemyDisplayer.findDeadbody(player.getName(), this.getClass().getName());
         }
     }
 
@@ -51,35 +51,35 @@ public abstract class Enemy extends Persona implements Square {
                 if (player.testLife()){
                     throw new PlayerDiedException(player);
                 }
-                enemyDisplayer.enemyEscape(this.type);
+                enemyDisplayer.enemyEscape(this.getClass().getName());
             } else {
                 enemyDisplayer.fail();
-                enemyDisplayer.enemyEscape(this.type);
+                enemyDisplayer.enemyEscape(this.getClass().getName());
             }
         } else {
             if (player.getOffensiveEquipment().getDamage() > this.getDefensiveEquipment().getDefense()) {
-                enemyDisplayer.playerMark(this.type);
+                enemyDisplayer.playerMark(this.getClass().getName());
                 int damage = d6.roll();
                 enemyDisplayer.damage(damage);
                 this.setLife(this.getLife() - damage);
                 if (this.getLife() > 0){
-                    enemyDisplayer.enemyEscape(this.type);
+                    enemyDisplayer.enemyEscape(this.getClass().getName());
                 } else {
-                    enemyDisplayer.enemyDied(this.type);
+                    enemyDisplayer.enemyDied(this.getClass().getName());
                     dead = true;
                 }
             } else {
                 enemyDisplayer.fail();
-                enemyDisplayer.enemyEscape(this.type);
+                enemyDisplayer.enemyEscape(this.getClass().getName());
             }
         }
 
     }
     @Override
     public String toString() {
-        return "\nEnnemi de type " + type + " :\n\t\t" +
-                "nombre de vie : " + life + "\n" +
-                offensiveEquipment + "\n" +
-                defensiveEquipment;
+        return "\nEnnemi de type " + this.type + " :\n\t\t" +
+                "nombre de vie : " + this.life + "\n" +
+                this.offensiveEquipment + "\n" +
+                this.defensiveEquipment;
     }
 }

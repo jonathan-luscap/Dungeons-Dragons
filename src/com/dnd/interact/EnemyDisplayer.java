@@ -1,5 +1,6 @@
 package com.dnd.interact;
 
+import com.dnd.character.Persona;
 import com.dnd.equipment.defensive.DefensiveEquipment;
 import com.dnd.equipment.offensive.OffensiveEquipment;
 

@@ -7,7 +7,7 @@ import com.dnd.exception.TypeMismatchException;
 public class Wizard extends Player {
 
     public Wizard() throws TypeMismatchException {
-        super("sorcier blanc", 15, OffensiveEquipmentFactory.equip("sorcier blanc"), DefensiveEquipmentFactory.equip("sorcier blanc"));
+        super(PersonaType.sorcier, 15, OffensiveEquipmentFactory.equip(PersonaType.sorcier), DefensiveEquipmentFactory.equip(PersonaType.sorcier));
     }
 
     public String getName()

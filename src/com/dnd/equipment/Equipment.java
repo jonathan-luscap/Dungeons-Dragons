@@ -1,17 +1,19 @@
 package com.dnd.equipment;
 
+import com.dnd.character.Persona;
+import com.dnd.connection.DatabaseAccessObject;
 import com.dnd.square.Square;
 
 public abstract class Equipment implements Square {
     protected String type;
-    protected String playerType;
+    protected Persona.PersonaType playerType;
 
     public Equipment() {
         this.type = null;
         this.playerType = null;
     }
 
-    public Equipment(String type, String playerType) {
+    public Equipment(String type, Persona.PersonaType playerType) {
         this.type = type;
         this.playerType = playerType;
     }
