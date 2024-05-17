@@ -1,9 +1,11 @@
 package com.dnd.menu;
 
+import com.dnd.character.PersonaDaoImplementation;
 import com.dnd.character.Player;
 import com.dnd.exception.StartPlayingException;
 import com.dnd.exception.StopGameException;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MainMenu extends Menu{
@@ -26,8 +28,7 @@ public class MainMenu extends Menu{
                     }
                 }
             }
-        } catch (
-                StartPlayingException startPlayingException) {
+        } catch (StartPlayingException startPlayingException) {
             System.out.println("*****    Ok, let's play folks !!   *****");
         }
         return players;

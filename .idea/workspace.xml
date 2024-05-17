@@ -5,33 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfea3a23-9141-46af-b5fd-1c684a89c475" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/dice/D8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/IronShield.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/Teleportation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Fireball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Mace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/PersonaDaoImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/PlayerFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/D6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/dice/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/WoodShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/WoodShield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Flash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Flash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DungeonsAndDragons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonsAndDragons.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dnd/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/DragonDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/DragonDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EmptyDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/EmptyDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EnemyDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/EnemyDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EquipmentDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/EquipmentDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/MagicalGemDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/MagicalGemDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PeaceDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/PeaceDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PlayerDiedDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/PlayerDiedDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PotionDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/interact/PotionDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +55,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/jon/IdeaProjects/DungeonsAndDragons/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   },
@@ -125,6 +111,7 @@
       <workItem from="1714235208400" duration="31512000" />
       <workItem from="1714578643433" duration="19105000" />
       <workItem from="1714717626734" duration="5290000" />
+      <workItem from="1715948746258" duration="6943000" />
     </task>
     <servers />
   </component>
@@ -149,6 +136,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/dnd/game/Game.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

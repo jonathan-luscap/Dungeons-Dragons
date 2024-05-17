@@ -1,6 +1,7 @@
 package com.dnd.game;
 
 import com.dnd.character.*;
+import com.dnd.connection.DatabaseAccessPersona;
 import com.dnd.equipment.*;
 import com.dnd.equipment.offensive.*;
 import com.dnd.equipment.defensive.*;
@@ -13,6 +14,7 @@ import com.dnd.square.*;
 import com.dnd.square.enemy.*;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -26,6 +28,7 @@ public class Game {
     MainMenu mainMenu = new MainMenu();
     private static int capacity = 63;
     ArrayList<Square> gameBoard = new ArrayList<>();
+    DatabaseAccessPersona dap = new PersonaDaoImplementation();
 
     public void gameLoop() throws StopGameException {
         while (true) {
@@ -36,6 +39,13 @@ public class Game {
 
     private void initiateGame() throws StopGameException {
         players = mainMenu.start(players);
+        for (Player player : players) {
+            try{
+                dap.add(player);
+            } catch (SQLException e){
+                System.out.println("Impossible de sauvegarder " + player.getName());;
+            }
+        }
         makeGameBoard();
         displayGameBoard();
     }

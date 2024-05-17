@@ -10,10 +10,11 @@ public class DatabaseConnection {
 
     static
     {
-        String url = "jdbc:mysql://172.18.0.1:3306/dungeons_and_dragons";
-        String user = "gameMaster";
-        String password = "gameMaster";
+        String url = "jdbc:mariadb://localhost:3307/dungeons_and_dragons";
+        String user = "root";
+        String password = "password";
         try{
+//            Class.forName("com.mariadb.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
         }
         catch(SQLException e){

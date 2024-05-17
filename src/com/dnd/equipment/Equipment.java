@@ -1,7 +1,6 @@
 package com.dnd.equipment;
 
 import com.dnd.character.Persona;
-import com.dnd.connection.DatabaseAccessObject;
 import com.dnd.square.Square;
 
 public abstract class Equipment implements Square {

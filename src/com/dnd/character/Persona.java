@@ -1,6 +1,5 @@
 package com.dnd.character;
 
-import com.dnd.connection.DatabaseAccessObject;
 import com.dnd.equipment.defensive.DefensiveEquipment;
 import com.dnd.equipment.offensive.OffensiveEquipment;
 
@@ -84,6 +83,13 @@ public abstract class Persona {
         }
     }
     public enum PersonaType{
-        guerrier, sorcier, monstre
+        guerrier(1), sorcier(2), monstre(3);
+        private int ind;
+        PersonaType(int ind){
+            this.ind = ind;
+        }
+        public int getInd() {
+            return ind;
+        }
     }
 }
