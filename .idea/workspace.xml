@@ -5,16 +5,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfea3a23-9141-46af-b5fd-1c684a89c475" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/PersonaDaoImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dnd/character/PlayerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DungeonsAndDragons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonsAndDragons.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessPersona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/PersonaDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/PersonaDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/PlayerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/PlayerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/character/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/character/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/connection/DatabaseAccessEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/connection/DatabaseAccessGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseAccessPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/connection/DatabaseAccessPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/connection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/connection/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/D8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/D8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/dice/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/dice/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/DefensiveEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipmentDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/DefensiveEquipmentDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/DefensiveEquipmentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/DefensiveEquipmentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/IronShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/IronShield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/SmokeBomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/SmokeBomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/Teleportation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/Teleportation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/defensive/WoodShield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/defensive/WoodShield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Flash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/Flash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Mace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/Mace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/OffensiveEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipmentDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/OffensiveEquipmentDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/OffensiveEquipmentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/OffensiveEquipmentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/equipment/offensive/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/equipment/offensive/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/AllPlayersDiedEception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/AllPlayersDiedEception.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/BadIntException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/BadIntException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/BadStringException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/BadStringException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/DragonDiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/DragonDiedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/DragonPeaceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/DragonPeaceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/GoBackException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/GoBackException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/NameEnteredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/NameEnteredException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/NewPlayerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/NewPlayerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/PlayerDiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/PlayerDiedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/SquareIsNotSquareException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/SquareIsNotSquareException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/StartPlayingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/StartPlayingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/StopGameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/StopGameException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/TypeMismatchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/TypeMismatchException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/exception/WinnerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/exception/WinnerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/game/GameDaoImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/game/GameDaoImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/game/TempGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/game/TempGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/DieDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/DieDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/Displayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/Displayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/DragonDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/DragonDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EmptyDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/EmptyDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EnemyDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/EnemyDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/EquipmentDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/EquipmentDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/GamesListDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/GamesListDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/MagicalGemDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/MagicalGemDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PeaceDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/PeaceDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PlayerDiedDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/PlayerDiedDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/PotionDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/PotionDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/interact/SurpriseDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/interact/SurpriseDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/AddPlayerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/AddPlayerMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/DiceRollingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/DiceRollingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/DisplayCharacterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/DisplayCharacterMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/DragonPeaceMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/DragonPeaceMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/ExitMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/GetGameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/GetGameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/GiveName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/GiveName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/LoadGameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/LoadGameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/LooserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/LooserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyAttributeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/ModifyAttributeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyCharacterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/ModifyCharacterMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/ModifyTypeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/ModifyTypeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/SavedGamesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/SavedGamesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/StartMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/menu/WinnerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/menu/WinnerMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/Surprise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/Surprise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/enemy/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/enemy/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/enemy/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/enemy/Goblin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dnd/square/enemy/Sorcerer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dnd/square/enemy/Sorcerer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +122,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "third",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/aphunk0/workspace/Dungeons-Dragons/src/com/dnd/equipment/defensive",
     "node.js.detected.package.eslint": "true",
@@ -77,8 +153,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="DungeonsAndDragons" />
+      <option name="MAIN_CLASS_NAME" value="com.dnd.Main" />
+      <module name="dnd_maven" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,7 +217,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dnd/game/Game.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/dnd/game/Game.java</url>
           <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
