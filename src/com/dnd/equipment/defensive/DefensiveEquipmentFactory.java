@@ -1,18 +1,17 @@
 package com.dnd.equipment.defensive;
 
 import com.dnd.character.Persona;
-import com.dnd.exception.TypeMismatchException;
 
 public class DefensiveEquipmentFactory {
-    public static DefensiveEquipment equip(Persona.PersonaType playerType) throws TypeMismatchException {
+    public static DefensiveEquipment equip(Persona.PersonaType playerType) {
         switch (playerType) {
-            case guerrier -> {
-                return new WoodShield(Persona.PersonaType.guerrier);
+            case WARRIOR -> {
+                return new WoodShield(Persona.PersonaType.WARRIOR);
             }
-            case sorcier -> {
-                return new SmokeBomb(Persona.PersonaType.sorcier);
+            case WIZARD -> {
+                return new SmokeBomb(Persona.PersonaType.WIZARD);
             }
-            default -> throw new TypeMismatchException();
         }
+        return null;
     }
 }

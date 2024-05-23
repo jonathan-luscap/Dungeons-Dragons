@@ -9,6 +9,7 @@ public abstract class Persona {
     protected PersonaType type;
     protected OffensiveEquipment offensiveEquipment;
     protected DefensiveEquipment defensiveEquipment;
+    protected int id;
 
     public Persona() {
         this.name = null;
@@ -75,6 +76,15 @@ public abstract class Persona {
         this.defensiveEquipment = defensiveEquipment;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
     public boolean testLife(){
         if (this.life > 0){
             return false;
@@ -83,13 +93,18 @@ public abstract class Persona {
         }
     }
     public enum PersonaType{
-        guerrier(1), sorcier(2), monstre(3);
-        private int ind;
-        PersonaType(int ind){
-            this.ind = ind;
+        WARRIOR(1, "guerrier"), WIZARD(2, "sorcier"), MONSTER(3, "monstre");
+        private int id;
+        private String typeName;
+        PersonaType(int id, String typeName){
+            this.id = id;
+            this.typeName = typeName;
         }
-        public int getInd() {
-            return ind;
+        public int getId() {
+            return id;
+        }
+        public String getTypeName() {
+            return typeName;
         }
     }
 }

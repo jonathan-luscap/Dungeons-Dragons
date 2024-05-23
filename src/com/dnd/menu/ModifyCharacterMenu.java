@@ -13,6 +13,7 @@ public class ModifyCharacterMenu extends Menu{
     {
         System.out.println("Entrer le numéro du personnage à modifier :");
     }
+
     public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StopGameException {
         ModifyAttributeMenu modifyAttributeMenu = new ModifyAttributeMenu();
         System.out.println("il y a " + players.toArray().length + " choix possibles.");

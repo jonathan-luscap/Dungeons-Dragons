@@ -5,14 +5,19 @@ import com.dnd.character.Persona;
 import java.util.Random;
 
 public class SmokeBomb extends DefensiveEquipment {
-    Random random = new Random();
 
     public SmokeBomb(Persona.PersonaType playerType) {
-        super("Fumigène", playerType);
+        super(DefensiveEquipmentType.SMOKEBOMB, playerType);
         this.defense = 6;
     }
     public SmokeBomb() {
-        super("Fumigène", Persona.PersonaType.sorcier);
+        super(DefensiveEquipmentType.SMOKEBOMB, Persona.PersonaType.WIZARD);
         this.defense = 3 + random.nextInt(7);
+    }
+
+    public SmokeBomb(int defense) {
+        super(defense);
+        this.type = DefensiveEquipmentType.SMOKEBOMB;
+        this.playerType = Persona.PersonaType.WIZARD;
     }
 }

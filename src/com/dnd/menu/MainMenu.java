@@ -4,22 +4,23 @@ import com.dnd.character.PersonaDaoImplementation;
 import com.dnd.character.Player;
 import com.dnd.exception.StartPlayingException;
 import com.dnd.exception.StopGameException;
+import com.dnd.game.Game;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MainMenu extends Menu{
-    public ArrayList<Player> start(ArrayList<Player> players) throws StopGameException {
+    public void start() throws StopGameException {
         try {
             while (true){
-                StartMenu startMenu = new StartMenu();
+                LoadGameMenu loadGameMenu = new LoadGameMenu();
                 boolean entered = false;
                 while (!entered)
                 {
                     try
                     {
-                        startMenu.displayChoices();
-                        players = startMenu.handleUserChoice(players,startMenu.getIntResponse());
+                        loadGameMenu.displayChoices();
+                        loadGameMenu.handleUserChoice(loadGameMenu.getIntResponse());
                         entered = true;
                     }
                     catch (ArrayIndexOutOfBoundsException e)
@@ -31,6 +32,5 @@ public class MainMenu extends Menu{
         } catch (StartPlayingException startPlayingException) {
             System.out.println("*****    Ok, let's play folks !!   *****");
         }
-        return players;
     }
 }

@@ -19,7 +19,7 @@ public class Dragon extends Enemy{
     private int defense = 4 + random.nextInt(4);
 
     public Dragon() {
-        super(PersonaType.monstre,null, null);
+        super(PersonaType.MONSTER,null, null);
         this.life =  10 + random.nextInt(10);
     }
 
@@ -77,7 +77,7 @@ public class Dragon extends Enemy{
             if (attackIsNotEnough && defenseIsNotEnough && !gemTaken){
                 magicalGemDisplayer.find(player.getName());
                 player.getOffensiveEquipment().setDamage(player.getOffensiveEquipment().getDamage() + 8);
-                magicalGemDisplayer.greaterWeapon(player.getOffensiveEquipment().getType(), player.getOffensiveEquipment().getDamage());
+                magicalGemDisplayer.greaterWeapon(player.getOffensiveEquipment().getType().name(), player.getOffensiveEquipment().getDamage());
                 gemTaken = true;
             }
             if (attackIsNotEnough && defenseIsEnough){

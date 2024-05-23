@@ -5,6 +5,7 @@ import com.dnd.character.Player;
 import com.dnd.character.Warrior;
 import com.dnd.character.Wizard;
 import com.dnd.exception.*;
+import com.dnd.game.Game;
 
 import java.util.ArrayList;
 
@@ -18,12 +19,12 @@ public class AddPlayerMenu extends Menu{
         System.out.println("\t|\t4.Arrêter le jeu");
     }
 
-    public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StopGameException, GoBackException, TypeMismatchException {
+    public ArrayList<Player> handleUserChoice(ArrayList<Player> players, int choice) throws StopGameException, GoBackException, TypeMismatchException, NewPlayerException {
         AddPlayerMenu.possibleResponses response = AddPlayerMenu.possibleResponses.values()[choice - 1];
         switch (response)
         {
-            case WARRIOR -> players = createWarrior(players);
-            case WIZARD -> players = createWizard(players);
+            case WARRIOR -> createWarrior();
+            case WIZARD -> createWizard();
             case BACK ->  goBack();
             case ENGAME -> endGame();
             default -> badChoice();
@@ -31,22 +32,26 @@ public class AddPlayerMenu extends Menu{
         return players;
     }
 
-    private ArrayList<Player> createWarrior(ArrayList<Player> players) throws TypeMismatchException {
+    private void createWarrior() throws NewPlayerException {
         Player warrior = new Warrior();
         GiveName giveName = new GiveName();
+        ArrayList<Player> players = Game.getPlayers();
         giveName.displayChoices();
         warrior = giveName.addName(warrior);
         players.add(warrior);
-        return players;
+        Game.setPlayers(players);
+        throw new NewPlayerException();
     }
 
-    private ArrayList<Player> createWizard(ArrayList<Player> players) throws TypeMismatchException {
+    private ArrayList<Player> createWizard() throws NewPlayerException {
         Player wizard = new Wizard();
         GiveName giveName = new GiveName();
+        ArrayList<Player> players = Game.getPlayers();
         giveName.displayChoices();
         wizard = giveName.addName(wizard);
         players.add(wizard);
-        return players;
+        Game.setPlayers(players);
+        throw new NewPlayerException();
     }
 
     private void goBack() throws GoBackException {

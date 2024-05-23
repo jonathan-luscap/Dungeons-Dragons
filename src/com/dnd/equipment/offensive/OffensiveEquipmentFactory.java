@@ -1,18 +1,17 @@
 package com.dnd.equipment.offensive;
 
 import com.dnd.character.Persona;
-import com.dnd.exception.TypeMismatchException;
 
 public class OffensiveEquipmentFactory {
-    public static OffensiveEquipment equip(Persona.PersonaType playerType) throws TypeMismatchException {
+    public static OffensiveEquipment equip(Persona.PersonaType playerType) {
         switch (playerType) {
-            case guerrier -> {
-                return new Sword(Persona.PersonaType.guerrier);
+            case WARRIOR -> {
+                return new Sword(Persona.PersonaType.WARRIOR);
             }
-            case sorcier -> {
-                return new Flash(Persona.PersonaType.sorcier);
+            case WIZARD -> {
+                return new Flash(Persona.PersonaType.WIZARD);
             }
-            default -> throw new TypeMismatchException();
         }
+        return null;
     }
 }

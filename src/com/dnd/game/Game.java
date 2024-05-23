@@ -17,18 +17,21 @@ import com.dnd.square.enemy.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Game {
-    private ArrayList<Player> players = new ArrayList<>();
+    private static ArrayList<Player> players = new ArrayList<>();
     Dice dice = new D6();
     WinnerMenu winnerMenu = new WinnerMenu();
     DisplayCharacterMenu displayCharacterMenu = new DisplayCharacterMenu();
     LooserMenu looserMenu = new LooserMenu();
     MainMenu mainMenu = new MainMenu();
-    private static int capacity = 63;
-    ArrayList<Square> gameBoard = new ArrayList<>();
+    private static final int capacity = 63;
+    static ArrayList<Square> gameBoard = new ArrayList<>();
     DatabaseAccessPersona dap = new PersonaDaoImplementation();
+    private static int gameId;
+    GameDaoImplementation gameDao = new GameDaoImplementation();
 
     public void gameLoop() throws StopGameException {
         while (true) {
@@ -37,17 +40,15 @@ public class Game {
         }
     }
 
-    private void initiateGame() throws StopGameException {
-        players = mainMenu.start(players);
-        for (Player player : players) {
-            try{
-                dap.add(player);
-            } catch (SQLException e){
-                System.out.println("Impossible de sauvegarder " + player.getName());;
-            }
-        }
+    private void initiateGame() throws StopGameException{
+
+        mainMenu.start();
         makeGameBoard();
-        displayGameBoard();
+        try{
+            gameDao.add();
+        } catch (SQLException sqlException){
+            System.out.println("Erreur lors de la sauvegarde de la partie");
+        }
     }
 
     private void play() throws StopGameException {
@@ -58,6 +59,9 @@ public class Game {
             while (true)
             {
                 for (Player player : players) {
+                    DiceRollingMenu diceRollingMenu = new DiceRollingMenu();
+                    diceRollingMenu.displayChoices();
+                    diceRollingMenu.handleUserChoice(diceRollingMenu.getIntResponse());
                     int dieRoll = dice.roll();
                     try
                     {
@@ -69,17 +73,23 @@ public class Game {
                         if (players.isEmpty()){
                             throw new AllPlayersDiedEception();
                         }
+                        try{
+                            dap.delete(player.getId());
+                        } catch (SQLException e){
+                            System.out.println("Impossible d'effacer la sauvegarde de " + player.getName());
+                        }
                     }
                 }
             }
         }
-        catch (DragonDiedException dragonException)
+        catch (DragonDiedException | DragonPeaceException dragonException)
         {
-            winnerMenu.congrates(dragonException.getPlayer());
-            winnerMenu.handleUserChoice(winnerMenu.getIntResponse());
-        }
-        catch (DragonPeaceException dragonException)
-        {
+            Player player = dragonException.getPlayer();
+            try{
+                dap.delete(player.getId());
+            } catch (SQLException e){
+                System.out.println("Impossible d'effacer la sauvegarde de " + player.getName());
+            }
             winnerMenu.congrates(dragonException.getPlayer());
             winnerMenu.handleUserChoice(winnerMenu.getIntResponse());
         }
@@ -114,10 +124,10 @@ public class Game {
     public void makeGameBoard() {
         Random random = new Random();
         ArrayList<Square> temp = new ArrayList<>();
-        int emptySquare = (int)(this.capacity * 0.1563);
-        int enemySquare = (int)(this.capacity * 0.2344) + random.nextInt(5);
-        int equipmentSquare = (int)(this.capacity * 0.3) + random.nextInt(3);
-        int potionSquare = (int)(this.capacity * 0.1965) + random.nextInt(3);
+        int emptySquare = (int)(Game.capacity * 0.1563);
+        int enemySquare = (int)(Game.capacity * 0.2344) + random.nextInt(5);
+        int equipmentSquare = (int)(Game.capacity * 0.3) + random.nextInt(3);
+        int potionSquare = (int)(Game.capacity * 0.1965) + random.nextInt(3);
         int surpriseSquare = capacity - emptySquare - equipmentSquare - potionSquare - enemySquare;
         for (int i = 0; i < emptySquare; i++){
             temp.add(new Empty());
@@ -136,7 +146,7 @@ public class Game {
         }
         Collections.shuffle(temp);
         gameBoard.add(new Empty());
-        for (int i = 1; i < this.capacity + 1; i++) {
+        for (int i = 1; i < Game.capacity + 1; i++) {
             gameBoard.add(i, temp.get(i - 1));
         }
         gameBoard.add(new Dragon());
@@ -207,7 +217,7 @@ public class Game {
         }
     }
 
-    private void displayPlayers(){
+    public static void displayPlayers(ArrayList<Player> players){
         for (Persona player : players){
             System.out.println(player);
         }
@@ -219,5 +229,29 @@ public class Game {
 
     public static int getCapacity() {
         return capacity;
+    }
+
+    public static ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public static void setPlayers(ArrayList<Player> players) {
+        Game.players = players;
+    }
+
+    public static ArrayList<Square> getGameBoard() {
+        return gameBoard;
+    }
+
+    public void setGameBoard(ArrayList<Square> gameBoard) {
+        Game.gameBoard = gameBoard;
+    }
+
+    public int getGameId() {
+        return gameId;
+    }
+
+    public static void setGameId(int gameId) {
+        Game.gameId = gameId;
     }
 }

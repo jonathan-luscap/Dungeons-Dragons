@@ -1,7 +1,8 @@
 import com.dnd.exception.*;
 import com.dnd.game.Game;
 
-public class Main {
+public class
+Main {
     public static void main(String[] args){
         Game game = new Game();
         try {

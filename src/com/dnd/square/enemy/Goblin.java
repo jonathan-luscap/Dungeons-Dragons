@@ -9,7 +9,7 @@ public class Goblin extends Enemy{
     Random random = new Random();
 
     public Goblin() {
-        super(PersonaType.guerrier, new Sword(), new WoodShield());
+        super(PersonaType.WARRIOR, new Sword(), new WoodShield());
         this.life = 1 + random.nextInt(4);
     }
 }

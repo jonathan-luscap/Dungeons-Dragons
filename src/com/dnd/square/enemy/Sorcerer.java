@@ -9,7 +9,7 @@ public class Sorcerer extends Enemy {
     Random random = new Random();
 
     public Sorcerer() {
-        super(PersonaType.sorcier, new Flash(), new SmokeBomb());
+        super(PersonaType.WIZARD, new Flash(), new SmokeBomb());
         this.life =  3 + random.nextInt(4);
     }
 }

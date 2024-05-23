@@ -7,14 +7,14 @@ import java.util.List;
 
 public interface DatabaseAccessPersona {
 
-    public int add(Persona persona)
+    int add(Persona persona, int gameId)
         throws SQLException;
-    public void delete(int id)
+    void delete(int id)
         throws SQLException;
-    public Persona getPersona(int id)
+    Persona getPersona(int id)
         throws SQLException;
-    public List<Persona> getPersonas()
+    List<Persona> getPersonas()
         throws SQLException;
-    public void update(Persona persona)
+    void update(Persona persona)
         throws SQLException;
 }

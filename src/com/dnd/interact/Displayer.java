@@ -6,9 +6,4 @@ import com.dnd.menu.MainMenu;
 
 public abstract class Displayer {
     MainMenu mainMenu = new MainMenu();
-
-
-
-
-
 }

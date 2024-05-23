@@ -22,6 +22,7 @@ public abstract class Player extends Persona {
     public int getMaxLife() {
         return 40;
     }
+
     public String toString()
     {
         return "\t****\t****\t****\t****\n" + this.getName() + " personnage de type " + this.type + " : \n\t" +

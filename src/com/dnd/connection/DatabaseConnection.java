@@ -14,7 +14,6 @@ public class DatabaseConnection {
         String user = "root";
         String password = "password";
         try{
-//            Class.forName("com.mariadb.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
         }
         catch(SQLException e){

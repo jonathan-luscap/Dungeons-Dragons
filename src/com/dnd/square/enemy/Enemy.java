@@ -28,7 +28,7 @@ public abstract class Enemy extends Persona implements Square {
     @Override
     public void interact(Player player) throws PlayerDiedException, DragonDiedException, DragonPeaceException {
         if (!dead) {
-            enemyDisplayer.find(player.getName(), this.getClass().getName(), this.life, this.offensiveEquipment, this.defensiveEquipment);
+            enemyDisplayer.find(player.getName(), this.getType().getTypeName(), this.life, this.offensiveEquipment, this.defensiveEquipment);
             boolean turn = d2.binary();
             if ((turn)) {
                 enemyDisplayer.enemyAttack(this.getClass().getName());
@@ -37,7 +37,7 @@ public abstract class Enemy extends Persona implements Square {
             }
             attack(player, turn);
         } else {
-            enemyDisplayer.findDeadbody(player.getName(), this.getClass().getName());
+            enemyDisplayer.findDeadbody(player.getName(), this.getType().getTypeName());
         }
     }
 
@@ -77,7 +77,7 @@ public abstract class Enemy extends Persona implements Square {
     }
     @Override
     public String toString() {
-        return "\nEnnemi de type " + this.type + " :\n\t\t" +
+        return "\nEnnemi de type " + this.getType().getTypeName() + " :\n\t\t" +
                 "nombre de vie : " + this.life + "\n" +
                 this.offensiveEquipment + "\n" +
                 this.defensiveEquipment;
