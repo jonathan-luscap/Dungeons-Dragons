@@ -6,16 +6,14 @@ import com.dnd.character.Player;
 import com.dnd.dice.D2;
 import com.dnd.dice.D6;
 import com.dnd.equipment.defensive.DefensiveEquipment;
-import com.dnd.equipment.defensive.WoodShield;
 import com.dnd.equipment.offensive.OffensiveEquipment;
-import com.dnd.equipment.offensive.Sword;
 import com.dnd.exception.DragonDiedException;
 import com.dnd.exception.DragonPeaceException;
 import com.dnd.exception.PlayerDiedException;
 import com.dnd.interact.EnemyDisplayer;
-import com.dnd.square.Square;
+import com.dnd.square.Openable;
 
-public abstract class Enemy extends Persona implements Square {
+public abstract class Enemy extends Persona implements Openable {
     EnemyDisplayer enemyDisplayer = new EnemyDisplayer();
     boolean dead = false;
     D2 d2 = new D2();

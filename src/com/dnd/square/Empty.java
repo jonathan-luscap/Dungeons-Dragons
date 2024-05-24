@@ -3,7 +3,7 @@ package com.dnd.square;
 import com.dnd.character.Player;
 import com.dnd.interact.EmptyDisplayer;
 
-public class Empty implements Square {
+public class Empty extends Square implements Openable {
 
     @Override
     public String toString() {

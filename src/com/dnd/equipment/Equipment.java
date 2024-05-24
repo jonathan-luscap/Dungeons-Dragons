@@ -1,9 +1,11 @@
 package com.dnd.equipment;
 
 import com.dnd.character.Persona;
-import com.dnd.square.Square;
+import com.dnd.square.Openable;
 
-public abstract class Equipment implements Square {
+public abstract class Equipment implements Openable {
+    private int position;
+
     protected Persona.PersonaType playerType;
 
     public Equipment() {
@@ -16,5 +18,13 @@ public abstract class Equipment implements Square {
 
     public Persona.PersonaType getPlayerType() {
         return playerType;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }

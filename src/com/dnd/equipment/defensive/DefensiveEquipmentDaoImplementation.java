@@ -7,6 +7,7 @@ import com.dnd.equipment.Equipment;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,12 +16,41 @@ public class DefensiveEquipmentDaoImplementation implements DatabaseAccessEquipm
     static Connection con = DatabaseConnection.getConnection();
 
     @Override
-    public void add(Persona persona, int gameId) throws SQLException {
-        PreparedStatement psDefensiveEquipment = con.prepareStatement("INSERT INTO DefensiveEquipment(type, defense, persona_id) VALUES(?,?,?)");
-        psDefensiveEquipment.setString(1, persona.getDefensiveEquipment().getType().getDefensiveEquipmentTypeName());
-        psDefensiveEquipment.setInt(2,persona.getDefensiveEquipment().getDefense());
-        psDefensiveEquipment.setInt(3,persona.getId());
-        psDefensiveEquipment.executeUpdate();
+    public int add(Persona persona, int gameId) throws SQLException {
+        int defEquipId = -1;
+        try (PreparedStatement psDefensiveEquipment = con.prepareStatement("INSERT INTO DefensiveEquipment(type, heroType, defense, persona_id, created_at) VALUES(?,?,?,NOW())");){
+            psDefensiveEquipment.setString(1, persona.getDefensiveEquipment().getType().getDefensiveEquipmentTypeName());
+            psDefensiveEquipment.setInt(2, persona.getType().getId());
+            psDefensiveEquipment.setInt(3,persona.getDefensiveEquipment().getDefense());
+            psDefensiveEquipment.setInt(4,persona.getId());
+            psDefensiveEquipment.executeUpdate();
+        }
+        try (PreparedStatement psDefEquipId = con.prepareStatement("SELECT id FROM DefensiveEquipment ORDER BY created_at DESC LIMIT 1");){
+            ResultSet rsOffEquipId = psDefEquipId.executeQuery();
+            while (rsOffEquipId.next()) {
+                defEquipId = rsOffEquipId.getInt(1);
+            }
+        }
+        return defEquipId;
+
+    }
+
+    public int add(DefensiveEquipment defensiveEquipment, int gameId) throws SQLException {
+        int defEquipId = -1;
+        try (PreparedStatement psDefensiveEquipment = con.prepareStatement("INSERT INTO DefensiveEquipment(type, heroType, defense, game_id, created_at) VALUES(?,?,?,NOW())");){
+            psDefensiveEquipment.setString(1, defensiveEquipment.getType().getDefensiveEquipmentTypeName());
+            psDefensiveEquipment.setInt(2, defensiveEquipment.getPlayerType().getId());
+            psDefensiveEquipment.setInt(3,defensiveEquipment.getDefense());
+            psDefensiveEquipment.setInt(4,gameId);
+            psDefensiveEquipment.executeUpdate();
+        }
+        try (PreparedStatement psOffEquipId = con.prepareStatement("SELECT id FROM DefensiveEquipment ORDER BY created_at DESC LIMIT 1");){
+            ResultSet rsOffEquipId = psOffEquipId.executeQuery();
+            while (rsOffEquipId.next()) {
+                defEquipId = rsOffEquipId.getInt(1);
+            }
+        }
+        return defEquipId;
     }
 
     @Override

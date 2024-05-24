@@ -17,16 +17,15 @@ public class PersonaDaoImplementation implements DatabaseAccessPersona {
 
     @Override
     public int  add(Persona persona, int gameId) throws SQLException {
-        PreparedStatement psHero = null;
-        //insert the character
-        psHero = con.prepareStatement("INSERT INTO Hero(name, life, type, game_id) VALUES(?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
-        psHero.setString(1, persona.getName());
-        psHero.setInt(2, persona.getLife());
-        psHero.setInt(3, persona.getType().getId());
-        psHero.setInt(4, gameId);
-        psHero.executeUpdate();
-        int personaId = 0;
-        try (ResultSet rs = psHero.getGeneratedKeys()){
+        int personaId = -1;
+        //insert player
+        try (PreparedStatement psHero = con.prepareStatement("INSERT INTO Hero(name, life, type, game_id) VALUES(?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);) {
+            psHero.setString(1, persona.getName());
+            psHero.setInt(2, persona.getLife());
+            psHero.setInt(3, persona.getType().getId());
+            psHero.setInt(4, gameId);
+            psHero.executeUpdate();
+            ResultSet rs = psHero.getGeneratedKeys();
             if (rs.next()){
                 personaId = rs.getInt(1);
             } else {
@@ -89,9 +88,11 @@ public class PersonaDaoImplementation implements DatabaseAccessPersona {
                 case WARRIOR -> persona = new Warrior();
                 case WIZARD -> persona = new Wizard();
             }
-            persona.setType(personaType);
-            persona.setName(rsHero.getString("name"));
-            persona.setLife(rsHero.getInt("life"));
+            if (persona != null){
+                persona.setType(personaType);
+                persona.setName(rsHero.getString("name"));
+                persona.setLife(rsHero.getInt("life"));
+            }
         }
         //get offensive equipment
         OffensiveEquipment offensiveEquipment = null;

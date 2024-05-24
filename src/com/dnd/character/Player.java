@@ -4,19 +4,10 @@ import com.dnd.equipment.defensive.DefensiveEquipment;
 import com.dnd.equipment.offensive.OffensiveEquipment;
 
 public abstract class Player extends Persona {
-    private int position;
 
     public Player(PersonaType type, int life, OffensiveEquipment offensiveEquipment, DefensiveEquipment defensiveEquipment) {
         super(type, life, offensiveEquipment, defensiveEquipment);
         this.position = 0;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
     }
 
     public int getMaxLife() {

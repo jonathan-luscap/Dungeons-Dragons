@@ -1,21 +1,20 @@
 package com.dnd.connection;
 
-import com.dnd.character.Persona;
-import com.dnd.equipment.Equipment;
+import com.dnd.square.Openable;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface DatabaseAccessEquipment {
+public interface DatabaseAccessSquare {
 
-    int add(Persona persona, int gameId)
+    void add(Openable openable, int gameId)
             throws SQLException;
     void delete(int id)
             throws SQLException;
-    Equipment getEquipment(int id)
+    Openable getSquare(int id)
             throws SQLException;
-    List<Equipment> getEquipments()
+    List<Openable> getSquares()
             throws SQLException;
-    void update(Equipment equipment)
+    void update(Openable openable)
             throws SQLException;
 }

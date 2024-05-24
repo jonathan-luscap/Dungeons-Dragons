@@ -2,7 +2,9 @@ package com.dnd.connection;
 
 import com.dnd.game.Game;
 
+import javax.management.openmbean.ArrayType;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface DatabaseAccessGame {

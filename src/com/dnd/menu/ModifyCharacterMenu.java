@@ -28,6 +28,7 @@ public class ModifyCharacterMenu extends Menu{
                     System.out.println(player);
                     modifyAttributeMenu.displayChoices();
                     player = modifyAttributeMenu.handleUserChoice(player, modifyAttributeMenu.getIntResponse());
+                    players.remove(choice - 1);
                     players.add(choice - 1, player);
                 }
             } catch (TypeMismatchException typeMismatchException) {

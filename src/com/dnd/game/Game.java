@@ -17,7 +17,6 @@ import com.dnd.square.enemy.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 public class Game {
@@ -28,7 +27,7 @@ public class Game {
     LooserMenu looserMenu = new LooserMenu();
     MainMenu mainMenu = new MainMenu();
     private static final int capacity = 63;
-    static ArrayList<Square> gameBoard = new ArrayList<>();
+    static ArrayList<Openable> gameBoard = new ArrayList<>();
     DatabaseAccessPersona dap = new PersonaDaoImplementation();
     private static int gameId;
     GameDaoImplementation gameDao = new GameDaoImplementation();
@@ -123,7 +122,7 @@ public class Game {
 
     public void makeGameBoard() {
         Random random = new Random();
-        ArrayList<Square> temp = new ArrayList<>();
+        ArrayList<Openable> temp = new ArrayList<>();
         int emptySquare = (int)(Game.capacity * 0.1563);
         int enemySquare = (int)(Game.capacity * 0.2344) + random.nextInt(5);
         int equipmentSquare = (int)(Game.capacity * 0.3) + random.nextInt(3);
@@ -150,23 +149,36 @@ public class Game {
             gameBoard.add(i, temp.get(i - 1));
         }
         gameBoard.add(new Dragon());
+        for (int i = 0; i < Game.capacity; i++){
+            Openable openable = gameBoard.get(i);
+            if (openable instanceof Persona){
+                Persona persona = (Persona) openable;
+                persona.setPosition(i);
+            } else if (openable instanceof Square){
+                Square square = (Square) openable;
+                square.setPosition(i);
+            } else if (openable instanceof Equipment) {
+                Equipment equipment = (Equipment) openable;
+                equipment.setPosition(i);
+            }
+        }
     }
 
-    private Square selectSquare() {
+    private Openable selectSquare() {
         Dice dice = new D5();
-        Square square = null;
+        Openable openable = null;
         int squareType = dice.roll();
         switch (squareType){
-            case 1 -> square = new Empty();
-            case 2 -> square = selectEnemy();
-            case 3 -> square = selectEquipment();
-            case 4 -> square = new Potion();
-            case 5 -> square = new Surprise();
+            case 1 -> openable = new Empty();
+            case 2 -> openable = selectEnemy();
+            case 3 -> openable = selectEquipment();
+            case 4 -> openable = new Potion();
+            case 5 -> openable = new Surprise();
         }
-        return square;
+        return openable;
     }
 
-    private Square selectEnemy() {
+    private Openable selectEnemy() {
         D2 d2 = new D2();
         Enemy enemy = null;
         boolean enemyType = d2.binary();
@@ -178,7 +190,7 @@ public class Game {
         return enemy;
     }
 
-    private Square selectEquipment() {
+    private Openable selectEquipment() {
         Dice dice = new D8();
         Equipment equipment = null;
         int equipmentType = dice.roll();
@@ -200,7 +212,7 @@ public class Game {
         if (gameBoard.isEmpty()) {
             return false;
         } else {
-            for (Square position : gameBoard){
+            for (Openable position : gameBoard){
                 if (position == null){
                     full = false;
                 }
@@ -211,8 +223,8 @@ public class Game {
 
     private void displayGameBoard(){
         int count =0;
-        for (Square square : gameBoard){
-            System.out.println("\nCase n°" + count + ": " + square);
+        for (Openable openable : gameBoard){
+            System.out.println("\nCase n°" + count + ": " + openable);
             count++;
         }
     }
@@ -239,11 +251,11 @@ public class Game {
         Game.players = players;
     }
 
-    public static ArrayList<Square> getGameBoard() {
+    public static ArrayList<Openable> getGameBoard() {
         return gameBoard;
     }
 
-    public void setGameBoard(ArrayList<Square> gameBoard) {
+    public void setGameBoard(ArrayList<Openable> gameBoard) {
         Game.gameBoard = gameBoard;
     }
 

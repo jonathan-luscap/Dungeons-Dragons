@@ -5,9 +5,12 @@ import com.dnd.character.PersonaDaoImplementation;
 import com.dnd.character.Player;
 import com.dnd.connection.DatabaseAccessGame;
 import com.dnd.connection.DatabaseConnection;
-import com.dnd.equipment.Equipment;
+import com.dnd.equipment.defensive.DefensiveEquipment;
+import com.dnd.equipment.defensive.DefensiveEquipmentDaoImplementation;
 import com.dnd.equipment.offensive.OffensiveEquipment;
-import com.dnd.square.Square;
+import com.dnd.equipment.offensive.OffensiveEquipmentDaoImplementation;
+import com.dnd.square.Openable;
+import com.dnd.square.OpenableDaoImplementation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,29 +26,27 @@ public class GameDaoImplementation implements DatabaseAccessGame {
     public void add() throws SQLException {
         //set game id
         int gameId = -1;
-        PreparedStatement psGame = con.prepareStatement("INSERT INTO Game(created_at) VALUES(NOW())");
-        psGame.executeUpdate();
-        PreparedStatement psId = con.prepareStatement("SELECT id FROM Game ORDER BY created_at DESC LIMIT 1");
-        ResultSet rs = psId.executeQuery();
-        while (rs.next()) {
-            gameId = rs.getInt(1);
-            System.out.println("gameId : " + gameId);
+        try (PreparedStatement psGame = con.prepareStatement("INSERT INTO Game(created_at) VALUES(NOW())");) {
+            psGame.executeUpdate();
+            PreparedStatement psId = con.prepareStatement("SELECT id FROM Game ORDER BY created_at DESC LIMIT 1");
+            ResultSet rs = psId.executeQuery();
+            while (rs.next()) {
+                gameId = rs.getInt(1);
+            }
         }
         Game.setGameId(gameId);
         //save players
         ArrayList<Player> players = Game.getPlayers();
         PersonaDaoImplementation personaDao = new PersonaDaoImplementation();
         for (Player player : players) {
-            personaDao.add(player, gameId);
+            int playerId = personaDao.add(player, gameId);
+            player.setId(playerId);
         }
         //save gameboard
-        ArrayList<Square> gameboard = Game.getGameBoard();
-        for (Square square : gameboard) {
-            if (square instanceof Persona){
-                personaDao.add((Persona) square, gameId);
-            } else if (square instanceof OffensiveEquipment){
-
-            }
+        ArrayList<Openable> gameboard = Game.getGameBoard();
+        OpenableDaoImplementation opDaoImplementation = new OpenableDaoImplementation();
+        for (Openable openable : gameboard) {
+            opDaoImplementation.add(openable, gameId);
         }
     }
 

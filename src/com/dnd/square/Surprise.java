@@ -9,7 +9,7 @@ import java.util.Random;
 
 import static com.dnd.game.Game.getCapacity;
 
-public class Surprise implements Square{
+public class Surprise extends Square implements Openable {
     Random random = new Random();
     SurpriseDisplayer surpriseDisplayer = new SurpriseDisplayer();
     D6 d6 = new D6();
@@ -24,6 +24,18 @@ public class Surprise implements Square{
         } else {
             this.squarePower = d6.roll();
         }
+    }
+
+    public Surprise(int squarePower) {
+        this.squarePower = squarePower;
+    }
+
+    public int getSquarePower() {
+        return squarePower;
+    }
+
+    public void setSquarePower(int squarePower) {
+        this.squarePower = squarePower;
     }
 
     @Override
